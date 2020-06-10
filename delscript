@@ -3,4 +3,4 @@ docker rm -f nginx
 docker build -t nginxtest .
 docker run --name nginx -p 8080:8080 -d nginxtest
 sleep 1
-curl http://127.0.0.1:8080/nasa/
+curl http://127.0.0.1:8080/nasa/ch8.htm
