@@ -1,0 +1,23 @@
+# Main Web App Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nasa
+  labels:
+    app: nasa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nasa
+  template:
+    metadata:
+      labels:
+        app: nasa
+    spec:
+      containers:
+      - name: nasa
+        image: 'ilsl/nasa:1.0.1'
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
